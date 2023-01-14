@@ -12,8 +12,7 @@ WHERE user.email LIKE '%@spotify.com';
 SELECT user.name,user.email, task.title
 FROM task
 LEFT JOIN user ON task.user_id = user.id
-WHERE
-    user.email LIKE '%apolak4@indiatimes.com';
+WHERE user.email LIKE '%apolak4@indiatimes.com';
 
 -- Get all the tasks for 'Donald Duck' with status 'Not started'
 SELECT task.id,user.name, task.title, task.status_id,status.name as TEXT
@@ -22,10 +21,7 @@ JOIN user_task ON task.id = user_task.task_id
 JOIN status ON task.status_id = status.id
 JOIN user ON user.id = user_task.user_id
 WHERE user.name LIKE 'Donald Duck' AND status.name = 'Not started';
-SELECT task.id,
-    task.title AS 'Task Name',
-    user.name AS 'user',
-    status.name AS status
+SELECT task.id, task.title AS 'Task Name', user.name AS 'user', status.name AS status
 FROM user_task
 JOIN task ON user_task.task_id = task.id
 JOIN user ON user_task.user_id = user.id
