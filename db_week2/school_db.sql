@@ -1,8 +1,3 @@
-
-CREATE DATABASE
-  school_db
-DEFAULT CHARACTER SET = "utf8mb4";
-use school_db;
 -- creating class table
 CREATE TABLE `class` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT PRIMARY KEY,
