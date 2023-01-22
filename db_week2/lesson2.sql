@@ -1,9 +1,6 @@
--- Add new column into task table
-ALTER TABLE   task
-ADD   user_id int(10) unsigned NOT NULL;
 --Get all the tasks assigned to users whose email ends in @spotify.com
 -- Tasks of users with email ends in @spotify.com
-SELECT user.id,user.name,user.email, task.title
+SELECT user.name,user.email, task.title,task.id
 FROM task
 JOIN user_task ON task.id = user_task.task_id
 JOIN user ON user.id = user_task.user_id
