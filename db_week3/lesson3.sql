@@ -1,3 +1,4 @@
+-- Active: 1674514482231@@127.0.0.1@3306@db_week3
 
 use db_week3;
 SELECT * FROM meal;
@@ -27,14 +28,14 @@ SELECT *
 FROM meal
 LIMIT 3;
 -- Get the meals that have good reviews
-SELECT meal.*,review.stars AS Stars_recieved FROM meal
+SELECT meal.id,meal.title,review.stars AS Stars_recieved FROM meal
 JOIN review ON meal.id=review.Meal_Id
 WHERE review.stars>80;
 -- Get reservations for a specific meal sorted by created_date
 SELECT meal.description,reservation.created_date AS reservation_Created_date
 FROM meal
-JOIN reservation ON meal.id = reservation.meal_id
-where meal_id=3
+JOIN reservation ON meal.id = reservation.meal_id 
+where meal_id=1
 ORDER BY reservation.created_date ASC;
 --alternative
 SELECT *
